@@ -1,0 +1,172 @@
+#header {
+	padding: 10px;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+#cssmenu ul,
+#cssmenu li,
+#cssmenu span,
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#cssmenu {
+	line-height: 1;
+	border-radius: 5px 5px 0 0;
+	background: #ffffff;
+	border-bottom: 1px solid orange;
+    width: 903px;
+  	margin-left: 0px;
+	margin-top: -14px;
+	padding-left:430px;
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#cssmenu a {
+  background: #ffffff;
+  color: #ffffff;
+  display: block;
+  padding: 19px 20px;
+  text-decoration: none;
+}
+#cssmenu ul {
+  list-style: none;
+}
+#cssmenu > ul > li {
+  display: inline-block;
+  float: center;
+  margin: 0;
+}
+#cssmenu > ul > li > a {
+  color: #000000;
+  font-size: 13.5px;
+}
+#cssmenu > ul > li:hover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid orange;
+  margin-left: -10px;
+}
+#cssmenu .has-sub {
+  z-index: 1;
+}
+#cssmenu .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub ul {
+  float: center;
+  display: none;
+  position: absolute;
+  width: 170px;
+  top: 100%;
+}
+#cssmenu .has-sub ul li a {
+  background: orange;
+  font-size: 12.7px;
+  display: block;
+  padding: 9px;
+}
+#cssmenu .has-sub ul li:hover a {
+  background: red;
+}
+#leftbar{
+	padding:150px;
+	padding-top:5px;
+	padding-left:10px;
+	width:85px;
+	height:482px;
+	margin-top:20px;
+	background-color:white;
+	border-bottom: 1px solid orange;
+	border-left: 1px solid orange;
+	border-right: 1px solid orange;
+	border-top: 1px solid orange;
+	text-align: left;
+}
+#isi{
+	position:absolute;
+	top:292px;
+	right:10px;
+	padding:150px;
+	width: 765px;
+	height:338px;
+	background-color:white;
+	border-bottom: 1px solid orange;
+	border-right: 1px solid orange;
+	border-left: 1px solid orange;
+	border-top: 1px solid orange;
+}
+#footer{
+	padding:5px;
+	margin-top:20px;
+	background-color:white;
+	border-bottom: 1px solid orange;
+	border-right: 1px solid orange;
+	border-left: 1px solid orange;
+	border-top: 1px solid orange;
+}
+#listsidebar{
+	width:180px;
+	overflow:hidden;
+	border:solid 1px #DEDEDE;
+}
+#listsidebar ul{
+	list-style:none;
+}
+#listsidebar ul li{
+	border-bottom:1px dotted #DAE5B9;margin-left:0px;line-height:26px
+}
+#listsidebar ul li a{
+	margin-left:10px;line-height:26px;text-decoration:none
+}
+#kotakjudul{
+	background:#1C1C1C;
+	margin: 0px;
+	padding: 5px;
+	color:#fff;
+	font-weight:bold;
+}
+.banner {
+	width: 100%;
+	height: 212px;
+}
+#dataTables{
+	position:absolute;
+	top:40px;
+	left:25px;
+}
+#formlogin{
+	padding:70px;
+	padding-top:8px;
+	padding-left:8px;
+	width:143px;
+	height:135px;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	border-top: 1px solid gray;
+}
+#judul{
+	background:orange;
+	margin: -8px;
+	padding: 7px;
+	width:207px;
+	color:#fff;
+	font-weight:bold;
+}
+#clock1{
+	padding:20px;
+	width:180px;
+	margin-left:1px;
+}
