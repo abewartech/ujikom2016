@@ -7,7 +7,7 @@ include 'koneksi.php';
 $Username = $_SESSION['Username'];
 $isLoggedIn = $_SESSION['isLoggedIn'];
 //proteksi akses dari URL langsung 
-if($isLoggedIn != '1'){
+if($isLoggedIn != '2'){
     session_destroy();
     header('Location: index.php');
 }
@@ -24,7 +24,7 @@ if($isLoggedIn != '1'){
 </div>
 <div id='cssmenu'>
 <ul>
-   <li><a href='index1.php'>Home</a></li>
+   <li><a href='index2.php'>Home</a></li>
    <li class='active has-sub'><a href='#'>Input Data</a>
    <ul>
    <li class='has-sub'><a href='ikendaraan.php'>Data Kendaraan</a></li>
@@ -51,8 +51,8 @@ if($isLoggedIn != '1'){
    <li class='has-sub'><a href='vkaryawan.php'>Data Karyawan</a></li>
    </ul>
    </li>
-   <li><a href='index1.php'>Kontak</a></li>
-   <li><a href='index1.php'>About</a></li>
+   <li><a href='index2.php'>Kontak</a></li>
+   <li><a href='index2.php'>About</a></li>
 </ul>
 </div>
 <div id="leftbar">

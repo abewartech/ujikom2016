@@ -19,26 +19,28 @@ error_reporting(0);
    <li><a href='index1.php'>Home</a></li>
    <li class='active has-sub'><a href='#'>Input Data</a>
    <ul>
-   <li class='has-sub'><a href='ikaryawan.php'>Data Karyawan</a></li>
    <li class='has-sub'><a href='ikendaraan.php'>Data Kendaraan</a></li>
    <li class='has-sub'><a href='ipelanggan.php'>Data Pelanggan</a></li>
-   <li class='has-sub'><a href='itransaksi.php'>Data Transaksi</a></li>
+   <li class='has-sub'><a href='itransaksip.php'>Data Transaksi Pinjam</a></li>
+   <li class='has-sub'><a href='itransaksik.php'>Data Transaksi Kembali</a></li>
    <li class='has-sub'><a href='isopir.php'>Data Sopir</a></li>
    <li class='has-sub'><a href='ipemilik.php'>Data Pemilik</a></li>
    <li class='has-sub'><a href='iservice.php'>Data Service</a></li>
    <li class='has-sub'><a href='isetoran.php'>Data Setoran</a></li>
+   <li class='has-sub'><a href='ikaryawan.php'>Data Karyawan</a></li>
    </ul>
    </li>
    <li class='active has-sub'><a href='#'>Lihat Data</a>
    <ul>
-   <li class='has-sub'><a href='vkaryawan.php'>Data Karyawan</a></li>
    <li class='has-sub'><a href='vkendaraan.php'>Data Kendaraan</a></li>
    <li class='has-sub'><a href='vpelanggan.php'>Data Pelanggan</a></li>
-   <li class='has-sub'><a href='vtransaksi.php'>Data Transaksi</a></li>
+   <li class='has-sub'><a href='vtransaksip.php'>Data Transaksi Pinjam</a></li>
+   <li class='has-sub'><a href='vtransaksik.php'>Data Transaksi kembali</a></li>
    <li class='has-sub'><a href='vsopir.php'>Data Sopir</a></li>
    <li class='has-sub'><a href='vpemilik.php'>Data Pemilik</a></li>
    <li class='has-sub'><a href='vservice.php'>Data Service</a></li>
    <li class='has-sub'><a href='vsetoran.php'>Data Setoran</a></li>
+   <li class='has-sub'><a href='vkaryawan.php'>Data Karyawan</a></li>
    </ul>
    </li>
    <li><a href='index1.php'>Kontak</a></li>
@@ -49,6 +51,32 @@ error_reporting(0);
 <?php include "sidebar.php";?>
 </div>
 <div id="isi">
+<div id="forminput">
+<form action="csopir.php" method="POST" name="input">
+<center><table>
+<p>Input Data Sopir</p>
+<tr>
+<td>Id Sopir</td><td>:</td><td><input type="text" name="IdSopir" placeholder="Id Sopir" class="box"></td>
+</tr>
+<tr>
+<td>Nama</td><td>:</td><td><input type="text" name="NmSopir" placeholder="Nama" class="box"></td>
+</tr>
+<tr>
+<td>Alamat</td><td>:</td><td><input type="text" name="AlmtSopir" placeholder="Alamat" class="box"></td>
+</tr>
+<tr>
+<td>No Telepon</td><td>:</td><td><input type="text" name="TelpSopir" placeholder="No Telepon" class="box"></td>
+</tr>
+<tr>
+<td>No SIM</td><td>:</td><td><input type="text" name="NoSIM" placeholder="No SIM" class="box"></td>
+</tr>
+<tr>
+<td>Tarif Per Jam</td><td>:</td><td><input type="text" name="TarifPerJam" placeholder="Tarif Per Jam" class="box"></td>
+</tr>
+</table></center>
+</form>
+<input type="submit" name="input" value="input" class="submit">
+</div>
 </div>
 <div id="footer">
 <center><p>Copyright &copy; Rahmad Al Habib 2016</p></center>

@@ -3,14 +3,12 @@
 ob_start();
 session_start();
 error_reporting(0);
-include 'koneksi.php';
-$Username = $_SESSION['Username'];
-$isLoggedIn = $_SESSION['isLoggedIn'];
-//proteksi akses dari URL langsung 
-if($isLoggedIn != '1'){
-    session_destroy();
-    header('Location: index.php');
-}
+include "koneksi.php";
+$No_Plat = $_GET['No_Plat'];
+$query = "select * from tb_kendaraan where No_Plat='$No_Plat'";
+$result =  mysql_query($query) or die("gagal melakukan query");
+     $buff = mysql_fetch_array($result);
+                 mysql_close();
 ?>
 <html>
 <head><title>Rental Mobil
@@ -59,6 +57,33 @@ if($isLoggedIn != '1'){
 <?php include "sidebar.php";?>
 </div>
 <div id="isi">
+<div id="forminput">
+<center><p>Update Data Kendaraan</p><table class="table1">
+<form action="ukendaraan.php" method="POST" name="input">
+<tr>
+<td>Plat Nomer : <input type="text" name="No_Plat" placeholder="Plat Nomer" value="<?php echo $buff['No_Plat']; ?>"><br></td>
+</tr>
+<tr>
+<td>Nama Type : <input type="text" name="Nama_Type" placeholder="Nama Type" value="<?php echo $buff['Nama_Type']; ?>"><br></td>
+</tr>
+<tr>
+<td>Nama Merk : <input type="text" name="Nama_Merk" placeholder="Nama Merk" value="<?php echo $buff['Nama_Merk']; ?>"><br></td>
+</tr>
+<tr>
+<td>Tahun : <input type="text" name="Tahun" placeholder="Tahun" value="<?php echo $buff['Tahun']; ?>"><br></td>
+</tr>
+<tr>
+<td>Tarif Per Jam : <input type="text" name="Tarif_Per_Jam" placeholder="Tarif Per Jam" value="<?php echo $buff['Tarif_Per_Jam']; ?>"><br></td>
+</tr>
+<tr>
+<td>Status Rental : <input type="text" name="Status_Rental" placeholder="Status Rental" value="<?php echo $buff['Status_Rental']; ?>"><br></td>
+</tr>
+<tr>
+<td><center><input type="submit" name="input" value="Update" class="submit"></center><td>
+</tr>
+</form>
+</table></center>
+</div>
 </div>
 <div id="footer">
 <center><p>Copyright &copy; Rahmad Al Habib 2016</p></center>

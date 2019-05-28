@@ -1,17 +1,20 @@
 <?php
+session_start();
 include "koneksi.php";
+$Username = $_POST['Username'];
+$Password = $_POST['Password'];
 
-$qry=mysql_query("SELECT * FROM login WHERE Username='$_POST[Username]' AND Password='$_POST[Password]'");
-$jumpa=mysql_num_rows($qry);
-$r=mysql_fetch_array($qry);
+$query = "SELECT * FROM tb_login WHERE Username = '$Username' ";
+$hasil = mysql_query($query);
+$data = mysql_fetch_array($hasil);
 
-if ($jumpa > 0) {
-	session_start();
-	$_SESSION[Username]= $r[Username];
-	$_SESSION[Password]= $r[Password];
-	$_SESSION[Username]= $r[Username];
-	header('location:index1.php');
+if ($Password == $data['Password']) {
+
+$_SESSION['Type_User'] = $data['Type_User'];
+$_SESSION['Username'] = $data['Username'];
+include "menu.php";
 }
+
 else {
 	echo '<script language="javascript">
 	alert("Username atau Password Yang anda Masukkan Salah");
@@ -19,4 +22,4 @@ else {
 	</script>';
 	exit();
 }
-?>
+?> 

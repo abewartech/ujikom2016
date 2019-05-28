@@ -16,7 +16,7 @@
 	line-height: 1;
 	border-radius: 5px 5px 0 0;
 	background: #ffffff;
-	border-bottom: 1px solid orange;
+	border-bottom: 1px solid #00BFFF;
     width: 903px;
   	margin-left: 0px;
 	margin-top: -14px;
@@ -45,7 +45,8 @@
 }
 #cssmenu > ul > li > a {
   color: #000000;
-  font-size: 13.5px;
+  font-size: 13.7px;
+  font-weight: bold;
 }
 #cssmenu > ul > li:hover:after {
   content: '';
@@ -55,7 +56,7 @@
   bottom: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid orange;
+  border-bottom: 10px solid #00BFFF;
   margin-left: -10px;
 }
 #cssmenu .has-sub {
@@ -72,13 +73,14 @@
   top: 100%;
 }
 #cssmenu .has-sub ul li a {
-  background: orange;
-  font-size: 12.7px;
+  background: #00BFFF;
+  font-size: 13.5px;
+  font-weight: bold;
   display: block;
   padding: 9px;
 }
 #cssmenu .has-sub ul li:hover a {
-  background: red;
+  background: #00FFFF;
 }
 #leftbar{
 	padding:150px;
@@ -88,10 +90,10 @@
 	height:482px;
 	margin-top:20px;
 	background-color:white;
-	border-bottom: 1px solid orange;
-	border-left: 1px solid orange;
-	border-right: 1px solid orange;
-	border-top: 1px solid orange;
+	border-bottom: 1px solid #00BFFF;
+	border-left: 1px solid #00BFFF;
+	border-right: 1px solid #00BFFF;
+	border-top: 1px solid #00BFFF;
 	text-align: left;
 }
 #isi{
@@ -102,19 +104,19 @@
 	width: 765px;
 	height:338px;
 	background-color:white;
-	border-bottom: 1px solid orange;
-	border-right: 1px solid orange;
-	border-left: 1px solid orange;
-	border-top: 1px solid orange;
+	border-bottom: 1px solid #00BFFF;
+	border-right: 1px solid #00BFFF;
+	border-left: 1px solid #00BFFF;
+	border-top: 1px solid #00BFFF;
 }
 #footer{
 	padding:5px;
 	margin-top:20px;
 	background-color:white;
-	border-bottom: 1px solid orange;
-	border-right: 1px solid orange;
-	border-left: 1px solid orange;
-	border-top: 1px solid orange;
+	border-bottom: 1px solid #00BFFF;
+	border-right: 1px solid #00BFFF;
+	border-left: 1px solid #00BFFF;
+	border-top: 1px solid #00BFFF;
 }
 #listsidebar{
 	width:180px;
@@ -158,7 +160,7 @@
 	border-top: 1px solid gray;
 }
 #judul{
-	background:orange;
+	background:#00BFFF;
 	margin: -8px;
 	padding: 7px;
 	width:207px;
@@ -170,3 +172,43 @@
 	width:180px;
 	margin-left:1px;
 }
+#forminput {
+	position:absolute;
+	top:40px;
+	width:750px;
+	height:auto;
+	background:#00BFFF;
+	border-radius:6px;
+	padding-top:1.5px;
+	color:white;
+}
+.submit{
+	text-align: center;
+	margin-left: 338px;
+	margin-bottom:25px;
+	margin-top:15px;
+	background: linear-gradient(to bottom, #00FFFF, #00BBFF);
+    border: 1px solid Black;
+    color: #FFF;
+    padding: 5px;
+    width: 100px;
+	border-radius:8px;
+}
+.submit:hover{
+	cursor: pointer;
+}
+.box {
+display: block;
+padding: 5px;
+border: 3px solid #00BFFF;
+border-radius: 5px;
+color: #333;
+transition: all 0.3s ease-out;
+}
+.box:hover { border-radius: 8px; }
+.box:focus { 
+outline: none;
+border-radius: 8px; 
+border-color: #00FFFF;
+}
+

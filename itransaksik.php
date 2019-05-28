@@ -3,14 +3,6 @@
 ob_start();
 session_start();
 error_reporting(0);
-include 'koneksi.php';
-$Username = $_SESSION['Username'];
-$isLoggedIn = $_SESSION['isLoggedIn'];
-//proteksi akses dari URL langsung 
-if($isLoggedIn != '1'){
-    session_destroy();
-    header('Location: index.php');
-}
 ?>
 <html>
 <head><title>Rental Mobil
@@ -59,6 +51,47 @@ if($isLoggedIn != '1'){
 <?php include "sidebar.php";?>
 </div>
 <div id="isi">
+<div id="forminput">
+<form action="csetoran.php" method="POST" name="input">
+<center><table>
+<p>Input Data Setoran</p>
+<tr>
+<td>Id Kembali</td><td>:</td><td><input type="text" name="Id_Kembali" placeholder="Id Kembali" class="box"></td>
+</tr>
+<tr>
+<td>No Transaksi</td><td>:</td><td><input type="text" name="No_Transaksi" placeholder="No Transaksi" class="box"></td>
+</tr>
+<tr>
+<td>Tgl Kembali Realisasi</td><td>:</td><td><input type="date" name="Tgl_Kembali_Realisasi" placeholder="Tgl Kembali Realisasi" class="box"></td>
+</tr>
+<tr>
+<td>Jam Kembali Realisasi</td><td>:</td><td><input type="text" name="Jam_Kembali_Realisasi" placeholder="Jam Kembali Realisasi" class="box"></td>
+</tr>
+<tr>
+<td>Denda</td><td>:</td><td><input type="text" name="Denda" placeholder="Denda" class="box"></td>
+</tr>
+<tr>
+<td>KM Kembali</td><td>:</td><td><input type="text" name="KM_Kembali" placeholder="KM Kembali" class="box"></td>
+</tr>
+<tr>
+<td>BBM Kembali</td><td>:</td><td><input type="text" name="BBM_Kembali" placeholder="BBM Kembali" class="box"></td>
+</tr>
+<tr>
+<td>Kondisi Mobil Kembali</td><td>:</td><td><input type="text" name="Kondisi_Mobil_Kembali" placeholder="Kondisi Mobil Kembali" class="box"></td>
+</tr>
+<tr>
+<td>Kerusakan</td><td>:</td><td><input type="text" name="Kerusakan" placeholder="Kerusakan" class="box"></td>
+</tr>
+<tr>
+<td>Biaya Kerusakan</td><td>:</td><td><input type="text" name="Biaya_Kerusakan" placeholder="Biaya_Kerusakan" class="box"></td>
+</tr>
+<tr>
+<td>Biaya BBM</td><td>:</td><td><input type="text" name="Biaya_BBM" placeholder="Biaya_BBM" class="box"></td>
+</tr>
+</table></center>
+</form>
+<input type="submit" name="input" value="input" class="submit">
+</div>
 </div>
 <div id="footer">
 <center><p>Copyright &copy; Rahmad Al Habib 2016</p></center>

@@ -3,24 +3,25 @@
 ob_start();
 session_start();
 error_reporting(0);
-include 'koneksi.php';
-$Username = $_SESSION['Username'];
-$isLoggedIn = $_SESSION['isLoggedIn'];
-//proteksi akses dari URL langsung 
-if($isLoggedIn != '1'){
-    session_destroy();
-    header('Location: index.php');
-}
+
 ?>
 <html>
 <head><title>Rental Mobil
 </title>
 <link rel="stylesheet" href="style/css/style.css" type="text/css">
+<script type="text/javascript" src="style/jquery/datatables/media/js/jquery.js"></script>
+<script type="text/javascript" src="style/jquery/datatables/media/js/jquery.dataTables.min.js"></script>
+<link href="style/jquery/datatables/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+ $(document).ready(function() {
+    $('#belajar').dataTable({oLanguage:{sLengthMenu:"Show <select>"+"<option value='5'>5</option>"+"</select> entries"},"iDisplayLength":5});
+ } );
+</script>
 </head>
 <body>
 <body background="style/img/back01.png">
 <div id="header">
-<img src="style/img/banner_rahmad.jpg" class="banner" >
+<img src="style/img/banner_rahmad.jpg" class="banner" href="index.php">
 </div>
 <div id='cssmenu'>
 <ul>
@@ -59,6 +60,47 @@ if($isLoggedIn != '1'){
 <?php include "sidebar.php";?>
 </div>
 <div id="isi">
+<div id="dataTables">
+<table border="1" align="center" id="belajar" width="1015px" class="display">
+<caption>Data Transaksi Kembali</caption>
+<thead>
+                        <tr>
+                          	<th width="12%">Id Kembali</th>
+                            <th>No Transaksi</th>
+							<th>Tgl Kembali</th>
+							<th>Denda</th>
+							<th>KM Kembali</th>
+                            <th>BBM Kembali</th>
+							<th>Biaya Kerusakan</th>
+							<th>Biaya BBM</th>
+                        </tr>
+                    </thead>
+					<tbody>
+					<?php
+	include'koneksi.php';
+    $query = mysql_query("select * from tb_transaksi_kembali");
+ 
+    $no = 0;
+    while ($r = mysql_fetch_array($query)){	
+    echo"<tr>
+            <td>$r[Id_Kembali]</td>
+            <td>$r[No_Transaksi]</td>
+			<td>$r[Tgl_Kembali]</td>
+            <td>$r[Denda]</td>
+			<td>$r[KM_Kembali]</td>
+            <td>$r[BBM_Kembali]</td>
+            <td>$r[Biaya_Kerusakan]</td>
+            <td>$r[Biaya_BBM]</td>
+			<td><a href='dtransaksip.php?Id_Kembali=".$r['Id_Kembali']."'>Hapus |<a/>
+			<a href='etransaksip.php?Id_Kembali=".$r['Id_Kembali']."' >Edit<a/>
+			</td>
+        </tr>";
+		$no++;	
+	}
+    ?>
+</tbody>
+</table>
+</div>
 </div>
 <div id="footer">
 <center><p>Copyright &copy; Rahmad Al Habib 2016</p></center>

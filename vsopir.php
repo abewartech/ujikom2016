@@ -25,33 +25,35 @@ error_reporting(0);
 </div>
 <div id='cssmenu'>
 <ul>
-   <li><a href='index.php'>Home</a></li>
+   <li><a href='index1.php'>Home</a></li>
    <li class='active has-sub'><a href='#'>Input Data</a>
    <ul>
-   <li class='has-sub'><a href='index.php'>Data Karyawan</a></li>
-   <li class='has-sub'><a href='index.php'>Data Kendaraan</a></li>
-   <li class='has-sub'><a href='index.php'>Data Pelanggan</a></li>
-   <li class='has-sub'><a href='index.php'>Data Transaksi</a></li>
-   <li class='has-sub'><a href='index.php'>Data Sopir</a></li>
-   <li class='has-sub'><a href='index.php'>Data Pemilik</a></li>
-   <li class='has-sub'><a href='index.php'>Data Service</a></li>
-   <li class='has-sub'><a href='index.php'>Data Setoran</a></li>
+   <li class='has-sub'><a href='ikendaraan.php'>Data Kendaraan</a></li>
+   <li class='has-sub'><a href='ipelanggan.php'>Data Pelanggan</a></li>
+   <li class='has-sub'><a href='itransaksip.php'>Data Transaksi Pinjam</a></li>
+   <li class='has-sub'><a href='itransaksik.php'>Data Transaksi Kembali</a></li>
+   <li class='has-sub'><a href='isopir.php'>Data Sopir</a></li>
+   <li class='has-sub'><a href='ipemilik.php'>Data Pemilik</a></li>
+   <li class='has-sub'><a href='iservice.php'>Data Service</a></li>
+   <li class='has-sub'><a href='isetoran.php'>Data Setoran</a></li>
+   <li class='has-sub'><a href='ikaryawan.php'>Data Karyawan</a></li>
    </ul>
    </li>
    <li class='active has-sub'><a href='#'>Lihat Data</a>
    <ul>
-   <li class='has-sub'><a href='vkaryawan.php'>Data Karyawan</a></li>
    <li class='has-sub'><a href='vkendaraan.php'>Data Kendaraan</a></li>
    <li class='has-sub'><a href='vpelanggan.php'>Data Pelanggan</a></li>
-   <li class='has-sub'><a href='vtransaksi.php'>Data Transaksi</a></li>
+   <li class='has-sub'><a href='vtransaksip.php'>Data Transaksi Pinjam</a></li>
+   <li class='has-sub'><a href='vtransaksik.php'>Data Transaksi kembali</a></li>
    <li class='has-sub'><a href='vsopir.php'>Data Sopir</a></li>
    <li class='has-sub'><a href='vpemilik.php'>Data Pemilik</a></li>
    <li class='has-sub'><a href='vservice.php'>Data Service</a></li>
    <li class='has-sub'><a href='vsetoran.php'>Data Setoran</a></li>
+   <li class='has-sub'><a href='vkaryawan.php'>Data Karyawan</a></li>
    </ul>
    </li>
-   <li><a href='index.php'>Kontak</a></li>
-   <li><a href='index.php'>About</a></li>
+   <li><a href='index1.php'>Kontak</a></li>
+   <li><a href='index1.php'>About</a></li>
 </ul>
 </div>
 <div id="leftbar">
@@ -59,32 +61,36 @@ error_reporting(0);
 </div>
 <div id="isi">
 <div id="dataTables">
-<table border="1" align="center" id="belajar" width="1015px">
+<table border="1" align="center" id="belajar" width="1015px" class="display">
 <caption>Data Sopir</caption>
 <thead>
                         <tr>
-                          	<th>Id</th>
+                          	<th width="15%">Id</th>
                             <th>Nama</th>
 							<th>Alamat</th>
 							<th>No Telepon</th>
                             <th>No SIM</th>
 							<th>Tarif Per Jam</th>
+							<th>Option</th>
                         </tr>
                     </thead>
 					<tbody>
 					<?php
 	include'koneksi.php';
-    $query = mysql_query("select * from sopir");
+    $query = mysql_query("select * from tb_sopir");
  
     $no = 0;
     while ($r = mysql_fetch_array($query)){	
     echo"<tr>
-            <td>$r[IdSopir]</td>
-            <td>$r[NmSopir]</td>
-			<td>$r[AlmtSopir]</td>
-            <td>$r[TelpSopir]</td>
-			<td>$r[NoSIM]</td>
-            <td>$r[TarifPerJam]</td>
+            <td>$r[Id_Sopir]</td>
+            <td>$r[Nama_Sopir]</td>
+			<td>$r[Alamat_Sopir]</td>
+            <td>$r[Telp_Sopir]</td>
+			<td>$r[No_SIM]</td>
+            <td>$r[Tarif_Per_Jam]</td>
+			<td><a href='dsopir.php?IdSopir=".$r['IdSopir']."' class='delete'>Hapus |<a/>
+			<a href='esopir.php?IdSopir=".$r['IdSopir']."' class='delete'>Edit<a/>
+			</td>
         </tr>";
 		$no++;	
 	}

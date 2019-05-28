@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "rental_mobil";
+$database = "rentalmobil_32";
 
 
 mysql_connect($server,$username,$password) or die("Koneksi gagal");

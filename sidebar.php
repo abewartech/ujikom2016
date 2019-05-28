@@ -49,12 +49,11 @@ $("#clock1").clock();
 			</div></br>
 			<img src="style/img/people.png" width="57" height="56">
 			<ul>
-				<li>Welcome	:	<?php echo "$_SESSION[Username]"; ?></li>
-				<li><a href="#">My Profil</a></li>
+				<li>Welcome	:	<?php echo "$_SESSION[Username]"; ?></li><br>
 		<?php
 			$cek=mysql_num_rows(mysql_query("SELECT Username FROM login WHERE Username='$_SESSION[Username]'"));
 			if ($cek > 0) {
-				echo "tes";
+				echo "";
 			}
 		?>
 				<li><a href="logout.php">Logout</a></li>

@@ -3,14 +3,6 @@
 ob_start();
 session_start();
 error_reporting(0);
-include 'koneksi.php';
-$Username = $_SESSION['Username'];
-$isLoggedIn = $_SESSION['isLoggedIn'];
-//proteksi akses dari URL langsung 
-if($isLoggedIn != '1'){
-    session_destroy();
-    header('Location: index.php');
-}
 ?>
 <html>
 <head><title>Rental Mobil
@@ -59,6 +51,50 @@ if($isLoggedIn != '1'){
 <?php include "sidebar.php";?>
 </div>
 <div id="isi">
+<div id="forminput">
+<form action="csetoran.php" method="POST" name="input">
+<center><table>
+<p>Input Data Setoran</p>
+<tr>
+<td>No Transaksi</td><td>:</td><td><input type="text" name="No_Transaksi" placeholder="No Transaksi" class="box"></td>
+</tr>
+<tr>
+<td>Id Pelanggan</td><td>:</td><td><input type="text" name="Id_Pelanggan" placeholder="Id Pelanggan" class="box"></td>
+</tr>
+<tr>
+<td>Plat Nomer</td><td>:</td><td><input type="text" name="No_Plat" placeholder="Plat Nomer" class="box"></td>
+</tr>
+<tr>
+<td>Id Sopir</td><td>:</td><td><input type="text" name="Id_Sopir" placeholder="Id Sopir" class="box"></td>
+</tr>
+<tr>
+<td>Tgl Pesan</td><td>:</td><td><input type="date" name="Tgl_Pesan" placeholder="Tgl Pesan" class="box"></td>
+</tr>
+<tr>
+<td>Tgl Pinjam</td><td>:</td><td><input type="date" name="Tgl_Pinjam" placeholder="Tgl Pinjam" class="box"></td>
+</tr>
+<tr>
+<td>Jam Pinjam</td><td>:</td><td><input type="text" name="Jam_Pinjam" placeholder="Jam Pinjam" class="box"></td>
+</tr>
+<tr>
+<td>Tgl Kembali Rencana</td><td>:</td><td><input type="date" name="Tgl_Kembali_Rencana" placeholder="Tgl Kembali Rencana" class="box"></td>
+</tr>
+<tr>
+<td>Jam Kembali Rencana</td><td>:</td><td><input type="date" name="Jam_Kembali_Rencana" placeholder="Jam Kembali Rencana" class="box"></td>
+</tr>
+<tr>
+<td>KM Pinjam</td><td>:</td><td><input type="text" name="KM_Pinjam" placeholder="KM Pinjam" class="box"></td>
+</tr>
+<tr>
+<td>BBM Pinjam</td><td>:</td><td><input type="text" name="BBM_Pinjam" placeholder="BBM Pinjam" class="box"></td>
+</tr>
+<tr>
+<td>Kondisi Mobil Pinjam</td><td>:</td><td><input type="text" name="Kondisi_Mobil_Pinjam" placeholder="Kondisi Mobil Pinjam" class="box"></td>
+</tr>
+</table></center>
+</form>
+<input type="submit" name="input" value="input" class="submit">
+</div>
 </div>
 <div id="footer">
 <center><p>Copyright &copy; Rahmad Al Habib 2016</p></center>
